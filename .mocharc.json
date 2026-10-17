@@ -1,0 +1,4 @@
+{
+	"ui": "tdd",
+	"spec": "out/core/**/*.test.js"
+}

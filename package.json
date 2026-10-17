@@ -1,0 +1,63 @@
+{
+  "name": "envaccord",
+  "displayName": "EnvAccord",
+  "version": "0.0.1",
+  "description": "Catches .env drift before it breaks your 'works on my machine' moment — flags code that uses an undeclared variable, right in the editor. No AI, no schema migration.",
+  "publisher": "your-publisher-id",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-publisher-id/envaccord"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "bin": {
+    "envaccord": "./out/cli.js"
+  },
+  "main": "./out/vscode/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "envaccord.addToDocs",
+        "title": "EnvAccord: Add Variable to Docs File"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test:unit": "mocha",
+    "test:integration": "node ./out/test/runTest.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "start": "node ./out/cli.js"
+  },
+  "keywords": [
+    "env",
+    "dotenv",
+    "environment-variables",
+    "static-analysis",
+    "drift"
+  ],
+  "dependencies": {
+    "typescript": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.3.9",
+    "glob": "^10.3.0",
+    "mocha": "^10.4.0"
+  }
+}
